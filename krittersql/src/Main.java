@@ -12,6 +12,7 @@ public class Main {
 
         char ch = 'y';
         System.out.println("Welcome");
+        System.out.println("------------------------");
 
         while (ch == 'y' | ch == 'Y') {
             try {
