@@ -20,6 +20,7 @@ public class Main {
                 System.out.println("Your Verification code is " + y);
                 System.out.print("Enter your Verification code :");
                 int x = sc.nextInt();
+                System.out.println("------------------------");
                 if (x == y) {
                     int choice;
                     System.out.print("1. BANK OPERATIONS \n2. BRANCH OPERATIONS \nEnter your choice :");
