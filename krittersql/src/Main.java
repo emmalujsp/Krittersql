@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 import java.io.*;
@@ -9,7 +11,7 @@ public class Main {
         Branch sampbranch = new Branch();
         Random random = new Random();
         Scanner sc = new Scanner(System.in);
-
+        Map<Integer, Character> map = new HashMap<Integer, Character>();
         char ch = 'y';
         System.out.println("Welcome");
         System.out.println("------------------------");
@@ -23,7 +25,7 @@ public class Main {
                 System.out.println("------------------------");
                 if (x == y) {
                     int choice;
-                    System.out.print("1. BANK OPERATIONS \n2. BRANCH OPERATIONS \nEnter your choice :");
+                    System.out.print("1. BANK OPERATIONS \n2. BRANCH OPERATIONS \n3. Mapping\n4. CSV reader\nEnter your choice :");
                     choice = sc.nextInt();
                     switch (choice) {
                         case 1:
@@ -62,6 +64,30 @@ public class Main {
                                     break;
 
                             }
+                        case 3:
+                            char c = 'y';
+                            int i = 1;
+                            while (c == 'y') {
+                                System.out.print("Enter new alphabet:");
+                                c = sc.next().charAt(0);
+                                map.put(i, c);
+                                System.out.print("Do you want to continue(y/n) :");
+                                c = sc.next().charAt(0);
+                                i++;
+                            }
+                            for (Map.Entry m : map.entrySet()) {
+                                System.out.println(m.getKey() + " " + m.getValue());
+                            }
+                            System.out.println(map.get(3));
+                            break;
+                        case 4:
+                            Scanner sch = new Scanner(new File("result.csv"));
+                            sch.useDelimiter(",");   //sets the delimiter pattern
+                            while (sc.hasNext())  //returns a boolean value
+                            {
+                                System.out.print(sch.next());  //find and returns the next complete token from this scanner
+                            }
+                            sch.close();  //closes the scannbreak;
 
                     }
                     //
