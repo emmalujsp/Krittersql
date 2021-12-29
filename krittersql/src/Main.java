@@ -1,3 +1,5 @@
+import org.testng.annotations.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -5,6 +7,7 @@ import java.util.Scanner;
 import java.io.*;
 
 public class Main {
+    @Test
     public static void main(String[] args) {
 
         bank sampbank = new bank();
@@ -64,6 +67,7 @@ public class Main {
                                     break;
 
                             }
+                            break;
                         case 3:
                             char c = 'y';
                             int i = 1;
@@ -88,6 +92,7 @@ public class Main {
                                 System.out.print(sch.next());  //find and returns the next complete token from this scanner
                             }
                             sch.close();  //closes the scannbreak;
+                            break;
 
                     }
                     //
